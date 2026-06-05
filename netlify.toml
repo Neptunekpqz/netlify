@@ -1,0 +1,16 @@
+# Netlify configuration for StellaWare.
+# Note: this project uses TanStack Start. For pure SPA hosting on Netlify,
+# `npm run build` produces a `dist/` folder you can deploy as-is.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback for client-side routing on Netlify.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
